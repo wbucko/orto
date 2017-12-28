@@ -1,0 +1,49 @@
+AlignParameters:
+  Enabled: false
+ClassLength:
+  CountComments: false
+  Max: 200
+Documentation:
+  Enabled: false
+Metrics/BlockLength:
+  Exclude:
+    - "spec/**/*.rb"
+Metrics/LineLength:
+  Max: 100
+MethodLength:
+  CountComments: false
+  Max: 15
+AllCops:
+  TargetRubyVersion: 2.4
+  Exclude:
+    - 'bin/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'Gemfile'
+    - 'Guardfile'
+    - 'Rakefile'
+
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+  SupportedStyles:
+    - aligned
+    - indented
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+Layout/DotPosition:
+  EnforcedStyle: leading
+  Enabled: true
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/Lambda:
+  Enabled: false
+Style/TrailingCommaInLiteral:
+  EnforcedStyleForMultiline: no_comma
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: no_comma
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    default: ()
+    '%i': ()
+    '%w': ()

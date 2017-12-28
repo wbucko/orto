@@ -17,7 +17,9 @@ group :development, :test do
 end
 
 group :development do
+  gem 'better_errors'
   gem 'scss_lint', require: false
+  gem 'haml-lint'
   gem 'listen', '~> 3.0.5'
   gem 'rubocop', require: false
   gem 'spring'

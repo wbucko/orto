@@ -2,6 +2,10 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV['ORTO_DATABASE_USERNAME'] %>
+  password: <%= ENV['ORTO_DATABASE_PASSWORD'] %>
+  host: <%= ENV['ORTO_DATABASE_HOST'] %>
+  port: <%= ENV['ORTO_DATABASE_PORT'] %>
 
 development:
   <<: *default
@@ -14,5 +18,3 @@ test:
 production:
   <<: *default
   database: orto_production
-  username: orto
-  password: <%= ENV['ORTO_DATABASE_PASSWORD'] %>

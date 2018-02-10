@@ -1,0 +1,5 @@
+##File path: bin/dev-bundle-update (chmod +x required)
+#!/bin/bash
+set -x
+
+docker-compose -f dev-compose.yml run web bundle update

@@ -1,0 +1,8 @@
+##File path: bin/dev-start (chmod +x required)
+#!/bin/bash
+set -x
+
+rm tmp/pids/server.pid
+bundle install --path vendor/bundle
+rake db:setup
+rails server -b '0.0.0.0'

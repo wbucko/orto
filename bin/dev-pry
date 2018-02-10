@@ -1,0 +1,5 @@
+##File path: bin/dev-pry (chmod +x required)
+#!/bin/bash
+set -x
+
+docker attach --sig-proxy=false --detach-keys ctrl-c $(docker-compose -f dev-docker-compose-development.yml ps -q web)

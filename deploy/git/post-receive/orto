@@ -10,8 +10,9 @@ TAG="$(git log --pretty=format:'%h' -n 1)"
 FULL_COMMIT_TAG="${REPO_NAME}:${TAG}"
 FULL_LATEST_TAG="${REPO_NAME}:latest"
 
+echo "${FULL_LATEST_TAG} + ${GIT_WORK_TREE}"
 # Build the image with the proper commit tag.
-docker build -t "${FULL_LATEST_TAG}" "${GIT_WORK_TREE}"
+docker build -t "${FULL_LATEST_TAG}" "${GIT_WORK_TREE}" -f "${GIT_WORK_TREE}/docker/staging/Dockerfile"
 
 # Get the Docker ID of the last built image.
 DOCKER_ID="$(docker images -q ${REPO_NAME} | head -1)"

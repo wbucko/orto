@@ -1,0 +1,43 @@
+version: '2'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: docker/staging/Dockerfile
+    container_name: 'orto-web'
+    command: bin/dev-start
+    volumes:
+      - .:/app
+      - orto-staging-gems:/app/vendor/bundle
+    ports:
+      - '3000:3000'
+    env_file:
+      - .env
+    depends_on:
+      - database
+      - redis
+    environment:
+      - RAILS_ENV=staging
+      - REDIS_URL=redis://redis:6379/0
+      - DATABASE_URL=postgres://postgres@database/app
+    tty: true
+    stdin_open: true
+
+  redis:
+    container_name: 'orto-redis'
+    image: redis:3.2
+    ports:
+      - '6379:6379'
+
+  database:
+    container_name: 'orto-database'
+    image: postgres:9.6
+    ports:
+      - '5432:5432'
+    restart: always
+    volumes:
+      - 'orto-staging-database:/var/lib/postgresql/data'
+
+volumes:
+  orto-staging-gems:
+  orto-staging-database:

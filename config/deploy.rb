@@ -1,5 +1,5 @@
 set :application, "orto"
-set :repo_url, 'git@bitbucket.org:wbucko/orto.git'
+set :repo_url, 'git@github.com:wbucko/orto.git'
 set :deploy_to, "/home/wojtek/#{fetch(:application)}"
 set :docker_volumes, [
  "#{shared_path}/config/secrets.yml:/app/config/secrets.yml",

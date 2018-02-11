@@ -14,6 +14,11 @@ gem 'sass-rails', '~> 5.0'
 gem 'sidekiq'
 gem 'uglifier', '>= 1.3.0'
 
+group :deployment do
+  gem 'capistrano', require: false
+  gem 'capistrano-docker', github: 'netguru/capistrano-docker', require: false
+end
+
 group :development, :test do
   gem 'pry'
   gem 'pry-rails'

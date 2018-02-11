@@ -11,6 +11,7 @@ gem 'puma', '~> 3.0'
 gem 'rack_password'
 gem 'rails', '~> 5.1.4'
 gem 'sass-rails', '~> 5.0'
+gem 'sidekiq'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do

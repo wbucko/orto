@@ -1,0 +1,11 @@
+---
+:concurrency: 5
+staging:
+  :logfile: log/sidekiq.log
+  :pidfile: tmp/pids/sidekiq.pid
+beta:
+  :logfile: log/sidekiq.log
+  :pidfile: tmp/pids/sidekiq.pid
+production:
+  :logfile: log/sidekiq.log
+  :pidfile: tmp/pids/sidekiq.pid

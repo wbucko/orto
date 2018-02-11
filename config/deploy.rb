@@ -7,5 +7,5 @@ set :docker_volumes, [
  "#{shared_path}/log:/app/log",
  "#{fetch(:application)}_staging_assets:/app/public/assets"
 ]
-set :docker_links, %w(postgres_ambassador:postgres redis_ambassador:redis)
-set :docker_apparmor_profile, "docker-ptrace"
+# set :docker_links, %w(postgres:postgres redis:redis)
+# set :docker_apparmor_profile, "docker-ptrace"

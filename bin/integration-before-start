@@ -1,0 +1,17 @@
+
+#!/bin/bash
+
+## instanly fail if any command fails
+set -e
+
+## print the commands
+set -x
+
+## if you want to cache npm you can put the npm install here, but you have to remember, that this script runs in seperate container,
+## so to maintain the "node_modules" folder you have to add it to the docker_volumes list
+#npm install
+
+#rake db:setup
+#rake seed:setup
+## this is similiar to npm, assets will precompile inside "run" container, but to "save" them you'll have to add the /app/public/assets to volume list
+rake assets:precompile
